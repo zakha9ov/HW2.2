@@ -27,24 +27,36 @@ class ViewController: UIViewController {
         // Slider
         redSlider.minimumValue = 0
         redSlider.maximumValue = 1
+        redSlider.minimumTrackTintColor = .red
         
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
+        greenSlider.minimumTrackTintColor = .green
         
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 1
+        blueSlider.minimumTrackTintColor = .blue
         
         // Label
-        
+        redValue.text = String(redSlider.value)
+        greenValue.text = String(greenSlider.value)
+        blueValue.text = String(blueSlider.value)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        showRGBView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
 
     @IBAction func redSliderAction() {
+        redValue.text = String(format: "%.2f", redSlider.value)
     }
     
     @IBAction func greenSliderAction() {
+        greenValue.text = String(format: "%.2f", greenSlider.value)
     }
     
     @IBAction func blueSliderAction() {
+        blueValue.text = String(format: "%.2f", blueSlider.value)
     }
     
 }
