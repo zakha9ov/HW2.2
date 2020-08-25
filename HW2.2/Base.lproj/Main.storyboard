@@ -57,13 +57,13 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-e4-Om7">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-e4-Om7">
                                                 <rect key="frame" x="0.0" y="52" width="41.666666666666664" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ph-Gp-FdB">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ph-Gp-FdB">
                                                 <rect key="frame" x="0.0" y="103.66666666666669" width="41.666666666666664" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,19 +77,19 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YgC-DX-oen">
                                                 <rect key="frame" x="-2" y="0.0" width="258.33333333333337" height="31"/>
                                                 <connections>
-                                                    <action selector="useRGBSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="GKT-xQ-ux2"/>
+                                                    <action selector="useRGBSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="PO2-Q2-7WC"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-EH-si3">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-EH-si3">
                                                 <rect key="frame" x="-2" y="47" width="258.33333333333337" height="31"/>
                                                 <connections>
-                                                    <action selector="useRGBSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="s49-Cf-Oa4"/>
+                                                    <action selector="useRGBSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="p4Q-Il-ntp"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pci-9U-f49">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pci-9U-f49">
                                                 <rect key="frame" x="-2" y="94" width="258.33333333333337" height="31"/>
                                                 <connections>
-                                                    <action selector="useRGBSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="1ea-MJ-VOj"/>
+                                                    <action selector="useRGBSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="OyS-Ez-BFe"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -112,12 +112,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="blueLabel" destination="9Ph-Gp-FdB" id="6d0-JS-qA2"/>
                         <outlet property="blueSlider" destination="pci-9U-f49" id="KYc-3w-F8s"/>
-                        <outlet property="blueValue" destination="9Ph-Gp-FdB" id="e1y-ss-479"/>
+                        <outlet property="greenLabel" destination="bhh-e4-Om7" id="QP3-sB-1dW"/>
                         <outlet property="greenSlider" destination="PM1-EH-si3" id="Tx0-Ev-2DG"/>
-                        <outlet property="greenValue" destination="bhh-e4-Om7" id="QP3-sB-1dW"/>
+                        <outlet property="redLabel" destination="XnE-t6-wyJ" id="KNf-LT-2Dj"/>
                         <outlet property="redSlider" destination="YgC-DX-oen" id="QdQ-qS-iHA"/>
-                        <outlet property="redValue" destination="XnE-t6-wyJ" id="KNf-LT-2Dj"/>
                         <outlet property="showRGBView" destination="w5x-m0-7vF" id="a0o-C1-rlE"/>
                     </connections>
                 </viewController>

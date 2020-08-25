@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var showRGBView: UIView!
     
-    @IBOutlet weak var redValue: UILabel!
-    @IBOutlet weak var greenValue: UILabel!
-    @IBOutlet weak var blueValue: UILabel!
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
     
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
@@ -31,28 +31,43 @@ class ViewController: UIViewController {
         
         // View RGB
         showRGBView.layer.cornerRadius = 10
-        showRGBView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1)
+        setRGBView()
         
         // Label
-        redValue.text = String(format: "%.2f", redSlider.value)
-        greenValue.text = String(format: "%.2f", greenSlider.value)
-        blueValue.text = String(format: "%.2f", blueSlider.value)
+        setNameFromSliderValue(for: redLabel, greenLabel, blueLabel)
     }
-
-    @IBAction func useRGBSlider() {
-        redValue.text = String(format: "%.2f", redSlider.value)
-        greenValue.text = String(format: "%.2f", greenSlider.value)
-        blueValue.text = String(format: "%.2f", blueSlider.value)
+    
+    @IBAction func useRGBSliders(_ sender: UISlider) {
+        switch sender.tag {
+        case 0: redLabel.text = deliverSliderValue(from: sender)
+        case 1: greenLabel.text = deliverSliderValue(from: sender)
+        case 2: blueLabel.text = deliverSliderValue(from: sender)
+        default: break
+        }
         
-        showRGBView.backgroundColor = UIColor(
-        red: CGFloat(redSlider.value),
-        green: CGFloat(greenSlider.value),
-        blue: CGFloat(blueSlider.value),
-        alpha: 1)
+        setRGBView()
+    }
+    
+    private func deliverSliderValue(from slider: UISlider) ->  String {
+        String(format: "%.2f", slider.value)
+    }
+    
+    private func setRGBView() {
+        showRGBView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                              green: CGFloat(greenSlider.value),
+                                              blue: CGFloat(blueSlider.value),
+                                              alpha: 1)
+    }
+    
+    private func setNameFromSliderValue(for labes: UILabel...) {
+        labes.forEach { label in
+            switch label.tag {
+            case 0: redLabel.text = deliverSliderValue(from: redSlider)
+            case 1: greenLabel.text = deliverSliderValue(from: greenSlider)
+            case 2: blueLabel.text = deliverSliderValue(from: blueSlider)
+            default: break
+            }
+        }
     }
 }
 
